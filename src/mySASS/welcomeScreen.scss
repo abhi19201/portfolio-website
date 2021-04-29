@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //font-family: "Poppins", "sans-serif";
+}
+
+body {
+  // min-height: 100vh;
+  // background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+  overflow: hidden;
+}
+
+// HEADER
+header {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1,
+  button {
+    position: relative;
+    z-index: 10;
+  }
+
+  .cardDiv {
+    position: relative;
+    top: 25%;
+    z-index: 10;
+  }
+
+  h1 {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
+    font-size: 10vw;
+    color: #fff;
+    font-weight: 700;
+    animation: h1Animate 2s ease-in-out forwards;
+    animation-delay: 1s;
+  }
+
+  @keyframes h1Animate {
+    0% {
+      transform: translateY(0);
+      font-size: 10vw;
+    }
+    100% {
+      transform: translateY(-25%);
+      font-size: 6vw;
+    }
+  }
+
+  button {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    bottom: 100px;
+    left: calc(50% - 60px);
+    width: 120px;
+    height: 50px;
+    border: 0;
+    box-shadow: 2px 1px 20px 0 rgba(#000, 0.5);
+    border-radius: 10px;
+    cursor: pointer;
+    background: #fff;
+    font-size: 1em;
+    color: #09203f;
+    transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1),
+      transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955),
+      box-shadow 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    overflow: hidden;
+
+    &:hover {
+      box-shadow: 0 0 0 0 rgba(#000, 0.5);
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .triangle {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #0b0e13 0%, #696e79 100%);
+    transition: all 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+
+    &.left {
+      clip-path: polygon(0 0, 0% 100%, 100% 100%);
+    }
+
+    &.right {
+      clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+  }
+
+  &.open {
+    .triangle {
+      &.left {
+        clip-path: polygon(0 0, 0 100%, 0 100%);
+      }
+
+      &.right {
+        clip-path: polygon(100% 0, 100% 0, 100% 100%);
+      }
+    }
+  }
+}
+
+// CONTENT
+content {
+  section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 2pt;
+    color: #fff;
+  }
+}
+
+// NAV
+nav {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+
+  ul {
+    list-style: none;
+
+    li {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 2;
+      letter-spacing: 1pt;
+      font-size: 2em;
+      color: #09203f;
+      animation: fadeDown 0.5s forwards;
+      opacity: 0;
+      cursor: pointer;
+      transform: translateY(-20px);
+      transition: all 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+      &:hover {
+        text-shadow: 2px 1px 40px rgba(#000, 0.5);
+        opacity: 0.8;
+      }
+
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          animation-delay: #{$i * 0.1 + 0.7}s;
+        }
+      }
+    }
+  }
+
+  #nav-close {
+    position: fixed;
+    top: 40px;
+    right: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+    animation: fadeDown 0.5s forwards;
+    animation-delay: 1.1s;
+    opacity: 0;
+    color: #09203f;
+    transform: translateY(-20px);
+  }
+
+  @keyframes fadeDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 1200px;
+  transform-style: preserve-3d;
+}
+
+.container .box {
+  position: relative;
+  width: 20vmax;
+  height: 48vh;
+  margin: 40px;
+  background: #232323;
+  border-radius: 20px;
+  transform-style: preserve-3d;
+}
+
+.container .box::before {
+  content: "WELCOME";
+  position: absolute;
+  top: 2%;
+  left: 10%;
+  font-size: 3vmax;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.container .box:hover.box::before {
+  opacity: 0.04;
+}
+
+.container .box .name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  color: #fff;
+  width: 100%;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box:hover .name {
+  top: 40px;
+  opacity: 1;
+}
+
+.container .box .buy {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, 0, 75px);
+  color: #fff;
+  background: #333;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.5%;
+  opacity: 0;
+  z-index: 10;
+}
+
+.container .box:hover .buy {
+  bottom: 30px;
+  opacity: 1;
+}
+
+.container .box .innerCard {
+  top: 48%;
+  left: 50%;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  z-index: 10;
+  opacity: 1;
+  transform: translate3d(-50%, -50%, 50px);
+}
+
+.container .box .product {
+  position: absolute;
+  top: 55%;
+  left: 42%;
+  transition: 0.5s;
+  z-index: 11;
+  transition: 0.5s;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 50px) rotate(-15deg);
+}
+
+.container .box:hover .product {
+  transform: translate3d(-50%, -50%, 100px) rotate(-15deg);
+}
+
+.container .box:nth-child(1) .innerCard {
+  background: linear-gradient(to top, #130e0e 0%, black 100%);
+}
+
+.container .box:nth-child(1) .buy {
+  background: linear-gradient(to top, black 0%, #130e0e 100%);
+}
+
+.container .box:nth-child(1) .innerCard {
+  position: relative;
+  width: 85%;
+  height: 78%;
+  background-color: rgb(13, 13, 14);
+  margin-top: 10%;
+  border-radius: 20px;
+}
+
+.beforeName {
+  font-size: 2rem;
+}
