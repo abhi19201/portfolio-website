@@ -1,7 +1,7 @@
 import React from 'react';
-import Portfolio from "./Portfolio";
-import Card from "./Card";
-import Social from "./Social";
+import Portfolio from "../Components/Portfolio";
+import Card from "../Components/Card";
+import Social from "../Components/Social";
 
 
 function Welcome() {
@@ -93,9 +93,9 @@ function Welcome() {
       </ul> */}
     </nav>
 
-    <content>
+    {/* <content> */}
       {bgSection}
-    </content>
+    {/* </content> */}
         
         
         

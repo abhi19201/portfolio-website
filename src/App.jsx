@@ -1,5 +1,5 @@
 import React from 'react';
-import Welcome from "./Welcome";
+import Welcome from "./Pages/Welcome";
 import { Switch, Route} from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 

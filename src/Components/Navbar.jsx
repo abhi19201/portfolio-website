@@ -1,35 +1,35 @@
 import React from 'react';
-import { useEffect, useRef } from 'react';
-import ABLogo from "./ABLogo";
-import VanillaTilt from "vanilla-tilt";
+//import { useEffect, useRef } from 'react';
+//import ABLogo from "./ABLogo";
+//import VanillaTilt from "vanilla-tilt";
 
 
-function Tilt(props) {
-    const { options, ...rest } = props;
-    const tilt = useRef(null);
+// function Tilt(props) {
+//     const { options, ...rest } = props;
+//     const tilt = useRef(null);
   
-    useEffect(() => {
-      VanillaTilt.init(tilt.current, options);
-    }, [options]);
+//     useEffect(() => {
+//       VanillaTilt.init(tilt.current, options);
+//     }, [options]);
   
-    return <div ref={tilt} {...rest} />;
-  }
+//     return <div ref={tilt} {...rest} />;
+//   }
 
 export default function Navbar() {
 
-    const options = {
-        max: 25,
-        speed: 400,
-      };
+    // const options = {
+    //     max: 25,
+    //     speed: 400,
+    //   };
 
     return (
         <div style={{zIndex:"-1"}}>
-           <nav className="navBar">
+           {/* <nav className="navBar">
    <a href="#first"><i className="far fa-user"></i></a>
    <a href="#second"><i className="fas fa-briefcase"></i></a>
    <a href="#third"><i className="far fa-file"></i></a>
    <a href="#fourth"><i className="far fa-address-card"></i></a>
- </nav>
+ </nav> */}
   
 <div className= 'containerSCSS'> 
   <section className= 'sectionSCSS' id= 'first'>
@@ -52,12 +52,12 @@ export default function Navbar() {
     )
 }
 
-{/* <div style={{backgroundColor: "white",height: "100%",position: "fixed",width: "6%"}}>
-        <Tilt className="box"  options={options} >
-            <div className="product">
-                <ABLogo 
-                    height="6rem"
-                />
-            </div>
-        </Tilt>
-        </div> */}
+//  <div style={{backgroundColor: "white",height: "100%",position: "fixed",width: "6%"}}>
+//         <Tilt className="box"  options={options} >
+//             <div className="product">
+//                 <ABLogo 
+//                     height="6rem"
+//                 />
+//             </div>
+//         </Tilt>
+//         </div> 
