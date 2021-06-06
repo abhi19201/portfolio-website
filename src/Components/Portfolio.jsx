@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 export default function Portfolio() {
     return (
 
-        <div>
+        <div style={{position: "inherit"}} >
             <Background />
             <Navbar />
             {/* <div className="portfolio">

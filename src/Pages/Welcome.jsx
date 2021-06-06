@@ -2,6 +2,7 @@ import React from 'react';
 import Portfolio from "../Components/Portfolio";
 import Card from "../Components/Card";
 import Social from "../Components/Social";
+import Particles from "react-particles-js";
 
 
 function Welcome() {
@@ -26,83 +27,55 @@ function Welcome() {
     
   }
 
+      //   <div>
 
-  function logoCard(){
+      //         {logoCard()}
 
-    if(cardState === true){
-      return (
-        <div className="cardDiv">
-                <div className="container">
-                  <Card 
-                    onClick={()=>{open()}}
-                  />
-                </div>
-        </div>
-      )
-    }
-  }
+      //         {socialIcons}
+            
+      //         {bgSection}        
+        
+      // </div>
 
     return (
-        <div>
-            <header className={`${btnClass}`}>
-              <div className="triangle left">
-              <h4 className="wordCarousel">    
-                 
-                  <div> 
-                      <ul className="flip4"> 
-                          <li className="textAnimate">வணக்கம்</li>  
-                          <li className="textAnimate">नमस्कार</li> 
-                          <li className="textAnimate">नमस्ते</li>
-                          <li className="textAnimate">Hello</li>
-                      </ul>
-                  </div>  
+      <div className="welcomeScreen">
+        <div className="particleBackground" >
+        <Particles
+          params={{
+            "particles": {
+              "number": {
+                  "value": 60
+              },
+              "size": {
+              "value": 3
+              }
+          },
+          "interactivity": {
+              "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                }
+              }
+          }
+        }} />
 
-                  <span className="textAnimate">This is Abhijeet</span>  
-                </h4>
-              </div>
-              <div className="triangle right">
-                <h4 className="wordCarousel">    
-                  
-                  <div> 
-                      <ul className="flip4"> 
-                          <li className="textAnimate">வணக்கம்</li>  
-                          <li className="textAnimate">नमस्कार</li> 
-                          <li className="textAnimate">नमस्ते</li>
-                          <li className="textAnimate">Hello</li>
-                      </ul>
-                  </div>  
+        <Card 
+          onClick={()=>{open()}}
+        />
 
-                  <span className="textAnimate">This is Abhijeet</span>  
-                </h4>
-              </div>
+        </div>
 
-              {logoCard()}
-
-              {socialIcons}
-
-            </header>
-            
-
-            
-
-    <nav>
-      {/* <ul>
-        <li>Section 1</li>
-        <li>Section 3</li>
-        <li>Section 2</li>
-      </ul> */}
-    </nav>
-
-    {/* <content> */}
-      {bgSection}
-    {/* </content> */}
-        
-        
-        
+        <div className="iconsBackground">
+          <Portfolio/>
+        </div>
       </div>
-
     )
 }
+
+// {logoCard()}
+// {socialIcons}
+// {bgSection}
 
 export default Welcome;
 
