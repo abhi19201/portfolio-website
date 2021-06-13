@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from "./App";
 import {HashRouter as Router} from "react-router-dom";
-import "./mySASS/main.scss";
+import "./mySASS/_main.scss";
 
 
 ReactDOM.render(

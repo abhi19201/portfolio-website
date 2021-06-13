@@ -3,7 +3,7 @@ import React from 'react';
 import Welcome from "./Pages/Welcome";
 import { Switch, Route} from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
+import Footer from "./Structure/Footer";
 
 function App(props){
     
@@ -19,6 +19,7 @@ function App(props){
 
                 </Switch>
             
+            <Footer/>
         </div>
     );
 }

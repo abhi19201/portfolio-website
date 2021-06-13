@@ -27,11 +27,11 @@ function Card(props) {
 
 
     return (
-        <Tilt className="box blob"  options={options} >
+        <Tilt className="box"  options={options} >
             {/* <button className="buy" onClick={props.onClick}>Start</button> */}
             <div className="product">
                 <ABLogo 
-                  height="15vmax"
+                  height="7vmax"
                 />
             </div>
         </Tilt>
