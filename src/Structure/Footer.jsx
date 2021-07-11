@@ -1,12 +1,12 @@
-import React,{useState} from 'react';
+import React from 'react';
 import '../mySASS/_social.scss';
 import './_footer.scss';
 import {address, Contacts}  from '../Content/footerInfo';
 
 function Footer(props){
 
-    const [screenSize, setScreenSize] = useState(window.screen.width);
-    window.addEventListener('resize', ()=>{setScreenSize(window.screen.width)});
+    // const [screenSize, setScreenSize] = useState(window.screen.width);
+    // window.addEventListener('resize', ()=>{setScreenSize(window.screen.width)});
 
     return (
         <div className="main" id="footer">

@@ -1,18 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Background from "../Components/iconBackground";
-import ProjectCard from "../Components/projectCard";
+//import ProjectCard from "../Components/projectCard";
 import Carousel from "../Components/Carousel";
 
 export default function Projects() {
-    const [GitData, setGitData] = React.useState(null);
+    //const [GitData, setGitData] = React.useState(null);
 
-    useEffect(() => {
-        fetch("https://api.github.com/users/Abhi19201/repos")
-            .then((res) => res.json())
-            .then((data) => {
-                setGitData([...data]);
-            });
-    }, []);
+    // useEffect(() => {
+    //     fetch("https://api.github.com/users/Abhi19201/repos")
+    //         .then((res) => res.json())
+    //         .then((data) => {
+    //             setGitData([...data]);
+    //         });
+    // }, []);
 
     return (
         <div>
