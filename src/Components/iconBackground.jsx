@@ -46,18 +46,11 @@ export default function Abhi(props) {
         );
     };
 
-
-    function bgMain(){
-        return(
+    return (
+        <section className="marquee-collection">
             <div className="marquee">
                 {bgSchema()}
             </div>
-        );
-    }
-
-    return (
-        <section className="marquee-collection">
-            {bgMain()}
         </section>
     )
 }

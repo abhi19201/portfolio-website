@@ -16,7 +16,7 @@ function Tilt(props) {
   }
   
 
-function Card(props) {
+function Logo(props) {
 
     
 
@@ -38,4 +38,4 @@ function Card(props) {
     );
 }
 
-export default Card;
+export default Logo;

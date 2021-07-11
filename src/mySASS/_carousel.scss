@@ -1,0 +1,129 @@
+$desktop: 700px;
+$carousel-width: 100vw;
+$carousel-height: 18vh;
+$carousel-elements: 17;
+$carousel-elements-displayed: 9;
+$carousel-elements-width: ($carousel-width / $carousel-elements-displayed);
+$time: 1s;
+$carousel-animation-duration: ($carousel-elements * $time * 2);
+$number-of-cards: 10;
+$height: 4 * 54vh;
+
+.projectCard {
+    position: absolute;
+    background: transparent !important;
+    top: 0vh;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 4vw;
+    margin: 0 auto;
+    padding: 15vh 4vw;
+    overflow: hidden;
+}
+
+@mixin desktopMix {
+    @media (max-width : #{$desktop}) {
+        @content;
+    }
+}
+
+.carousel-collection {
+    margin: 0;
+    padding: 0;
+    z-index: -2;
+}
+
+.carousel-collection {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: $height;
+    background: rgba(17, 17, 17, 0.66);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //overflow: hidden;
+}
+
+.carousel-collection::before,
+.carousel-collection::after {
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+}
+
+.carousel-collection::before {
+    left: 0;
+    background: linear-gradient(to right, #111 0%, transparent 100%);
+}
+
+.carousel-collection::after {
+    right: 0;
+    background: linear-gradient(to left, #111 0%, transparent 100%);
+}
+
+.carousel-collection .carousel {
+    position: relative;
+    top: -45vh;
+    width: $carousel-width;
+    height: $carousel-height;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+    white-space: nowrap;
+    font-size: 70px;
+    letter-spacing: 0.5em;
+    @include desktopMix {
+        top: -20%;
+        font-size: 50px;
+    }
+}
+
+.carousel-collection .carousel div {
+    animation: scrolling1 $carousel-animation-duration linear infinite;
+}
+
+.carousel-collection .carousel:nth-child(even) div {
+    animation: scrolling2 $carousel-animation-duration linear infinite;
+}
+
+.carousel-icons {
+    color: rgba(0, 0, 0, 0.5);
+    transition: 1%;
+    width: $carousel-elements-width;
+    padding: 0 5px;
+    user-select: none;
+    cursor: default;
+}
+
+.carousel-icons:hover {
+    transition: 0%;
+    color: #0f0;
+    text-shadow: 0px 0px 10px rgb(51, 255, 51);
+}
+
+@keyframes scrolling1 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(
+            (-1 * $carousel-elements-width * $carousel-elements)
+        );
+    }
+}
+
+@keyframes scrolling2 {
+    100% {
+        transform: translateX(0px);
+    }
+    0% {
+        transform: translateX(
+            (-1 * $carousel-elements-width * $carousel-elements)
+        );
+    }
+}
