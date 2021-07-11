@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from "../Components/Logo";
-import Resume from "../Content/Resume..pdf"
+import Resume from "../Content/Resume.pdf"
 
 export default function Navbar() {
     return (
