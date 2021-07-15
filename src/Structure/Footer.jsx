@@ -40,11 +40,11 @@ function Footer(props){
                         <ul className="quickLinks" >
 
                             <li className="list" >
-                                <li class="fas fa-chevron-right rightIcon"></li>
+                                <li className="fas fa-chevron-right rightIcon"></li>
                                 <a href="https://www.iiitr.ac.in/" >IIITR Website</a>
                             </li>
                             <li className="list" >
-                                <li class="fas fa-chevron-right rightIcon"></li>
+                                <li className="fas fa-chevron-right rightIcon"></li>
                                 <a href="https://www.iiitr.ac.in/faculty.html" >Faculty Profiles</a>
                             </li>
                             
@@ -59,8 +59,8 @@ function Footer(props){
                                 return(
                                     <div className="contentCards" >
                                         <div>{item.name}</div>
-                                        <a  className="phoneNum" href={`mailto:${item.email}`} ><i class="fas fa-envelope" aria-hidden="true"></i> : {item.email}</a>
-                                        <a className="phoneNum" href={`tel: ${item.phoneNum}`}  ><i class="fa fa-phone" aria-hidden="true"></i> : {item.phoneNum}</a>
+                                        <a  className="phoneNum" href={`mailto:${item.email}`} ><i className="fas fa-envelope" aria-hidden="true"></i> : {item.email}</a>
+                                        <a className="phoneNum" href={`tel: ${item.phoneNum}`}  ><i className="fa fa-phone" aria-hidden="true"></i> : {item.phoneNum}</a>
                                     </div>
                                 )
                             })

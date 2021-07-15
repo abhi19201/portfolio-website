@@ -1,5 +1,6 @@
 import React from "react";
 import Background from "../Components/iconBackground";
+import ProjectArray from "../Content/Projects";
 //import ProjectCard from "../Components/projectCard";
 import Carousel from "../Components/Carousel";
 
@@ -24,14 +25,14 @@ export default function Projects() {
                     <Background />
                 </div>
 
-                <Carousel />
+                <Carousel projects={ProjectArray} />
             </div>
         </div>
     );
 }
 
 /**
-    <div class="projectCard" onClick={()=>{console.log(GitData)}} >
+    <div className="projectCard" onClick={()=>{console.log(GitData)}} >
                     {GitData!=null ? GitData.map((repo, id)=>{
                     return(
                         <ProjectCard

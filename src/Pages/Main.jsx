@@ -7,18 +7,16 @@ import Home from "./Home";
 function Welcome() {
 
     return (
-      <div className="welcomeScreen" id="top" >
+        <div className='welcomeScreen' id='top'>
+            <NavBar />
 
-        <NavBar/>
+            <Home />
 
-        <Home/>
+            <About />
 
-        <About/>
-        
-        <Projects/>
-
-      </div>
-    )
+            <Projects />
+        </div>
+    );
 }
 
 

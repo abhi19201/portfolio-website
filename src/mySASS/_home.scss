@@ -1,20 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Mate+SC&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
 
-.home{
+.home {
     position: absolute;
-    
-    
+}
+
+.profile {
+    position: absolute;
+    right: 5vw;
+    margin-bottom: 20vh;
+
+    .proImg {
+        width: 22vw;
+        border-radius: 3vw;
+    }
 }
 
 .title {
-    
     position: relative;
     top: -15vh;
     padding-left: 5vw;
     // grid-column: 1 / -1;
     // grid-row: 1;
     color: white;
-    font-family: 'Mate SC', serif;
+    font-family: "Mate SC", serif;
     font-weight: 800;
     width: 100%;
     z-index: 2;
@@ -28,32 +36,33 @@
 
 @keyframes text-clip {
     from {
-    clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
     }
     to {
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 }
 
 @keyframes outer-left {
     from {
-    transform: translateX(50%);
+        transform: translateX(50%);
     }
     to {
-    transform: none;
+        transform: none;
     }
 }
 
 @keyframes inner-left {
     from {
-    transform: translateX(-50%);
+        transform: translateX(-50%);
     }
     to {
-    transform: none;
+        transform: none;
     }
 }
 
-.hi,.name {
+.hi,
+.name {
     animation: outer-left 1.5s 2s cubic-bezier(0.5, 0, 0.1, 1) both;
 }
 
@@ -64,13 +73,13 @@
 
 .inner-hi {
     display: inline-block;
-    animation: inner-left 1.5s 2s ease both, text-clip 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+    animation: inner-left 1.5s 2s ease both,
+        text-clip 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
 }
 
 .inner-name {
     animation: text-clip 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
 }
-
 
 .title {
     animation: outer-left 1s 2s ease both;
@@ -89,7 +98,7 @@
     display: inline-block;
 }
 
-.profession{
+.profession {
     font-size: 3vw;
 }
 
@@ -103,10 +112,10 @@
 
     @keyframes image-in {
         from {
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         }
         to {
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
         }
     }
 
@@ -116,4 +125,3 @@
         height: auto;
     }
 }
-
