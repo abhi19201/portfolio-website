@@ -16,7 +16,7 @@ function Welcome() {
 
             <About />
             
-            <Projects />
+            <Projects/>
         </div>
     );
 }

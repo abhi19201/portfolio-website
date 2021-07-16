@@ -12,7 +12,7 @@
 
 .projects {
     position: absolute;
-    bottom: 60vh;
+    top: 115vh;
     left: 5vw;
     z-index: 1;
     font-size: 9rem;
@@ -60,4 +60,20 @@
             }
         }
     }
+}
+
+.Connect {
+    position: absolute;
+    bottom: 24rem;
+    left: -2rem;
+    z-index: 1;
+    font-size: 7rem;
+    font-weight: 900;
+    color: rgba(56, 56, 56, 0.75);
+    -webkit-user-select: none;
+    user-select: none;
+    transform: rotate(-30deg);
+    border-bottom: 1px solid white;
+    width: 74rem;
+    text-align: center;
 }

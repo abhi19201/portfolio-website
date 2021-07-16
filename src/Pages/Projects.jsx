@@ -3,10 +3,11 @@ import Background from "../Components/iconBackground";
 import ProjectArray from "../Content/Projects";
 import Carousel from "../Components/Carousel";
 import { skillSet1, skillSet2 } from "../Content/Skills";
+import Footer from "../Structure/Footer";
 
 export default function Projects() {
     return (
-        <div>
+        <div >
             <h1 className='skills' id='project'>
                 Skills
             </h1>
@@ -15,19 +16,19 @@ export default function Projects() {
                     <Background />
                 </div>
 
-                <div className="iconsBackContent" >
+                <div className='iconsBackContent'>
                     <div className='row skillsRow '>
                         <div className='column skillsColumn'>
                             {skillSet1.map((skill) => {
                                 return (
-                                    <div >
+                                    <div>
                                         {skill.icon ? skill.icon : null}
                                         <h3>{skill.skill}</h3>
                                     </div>
                                 );
                             })}
                         </div>
-                        <div className="skillsBorder" ></div>
+                        <div className='skillsBorder'></div>
                         <div className='column skillsColumn'>
                             {skillSet2.map((skill) => {
                                 return (
@@ -40,11 +41,15 @@ export default function Projects() {
                         </div>
                     </div>
 
-                    <h1 className='projects' id='project'>
+                    <h1 className='projects' id='project' >
                         Projects
                     </h1>
 
                     <Carousel projects={ProjectArray} />
+
+                    <h1 className='Connect'>Let's Connect ...</h1>
+
+                    <Footer />
                 </div>
             </div>
         </div>

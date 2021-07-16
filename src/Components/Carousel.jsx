@@ -110,10 +110,10 @@ export default function Carousel() {
                                               <div class='container_content'>
                                                   <div class='container_content_inner'>
                                                       <div class='projTitle'>
-                                                          <h1>{repo.name}</h1>
+                                                          <h1 class="projHead" >{repo.name}</h1>
                                                       </div>
                                                       <div class='par'>
-                                                          <p>
+                                                          <p className="projDes" >
                                                               {repo.description}
                                                           </p>
                                                       </div>

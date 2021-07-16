@@ -1,12 +1,27 @@
-import React from 'react';
+import React, {useState} from "react";
 import "../mySASS/_social.scss";
 
 export default function SocialIconBar() {
+
+    const [hideSideBar, setHideBar] = useState(" ");
+
+    const changeBarView = () => {
+        if (window.scrollY >= 2050) {
+            setHideBar("hideBar");
+        }
+
+        if (window.scrollY < 2050) {
+            setHideBar(" ");
+        }
+    };
+
+    window.addEventListener("scroll", changeBarView);
+
     return (
-        <div className='socialPane'>
+        <div className={`socialPane ${hideSideBar}`}>
             <div className='paneBorder'>
                 <div className='socialArray'>
-                    <div className='socialIcon '>
+                    <div className='socialIconC '>
                         <svg height='4rem' width='4rem'>
                             <circle
                                 cx='2rem'
@@ -19,7 +34,7 @@ export default function SocialIconBar() {
                         <i className='fab fa-instagram fa-lg instagram'></i>
                     </div>
 
-                    <div className='socialIcon '>
+                    <div className='socialIconC '>
                         <svg height='4rem' width='4rem'>
                             <circle
                                 cx='2rem'
@@ -32,7 +47,7 @@ export default function SocialIconBar() {
                         <i className='fab fa-lg fa-facebook-f facebook'></i>
                     </div>
 
-                    <div className='socialIcon '>
+                    <div className='socialIconC '>
                         <svg height='4rem' width='4rem'>
                             <circle
                                 cx='2rem'
@@ -45,7 +60,7 @@ export default function SocialIconBar() {
                         <i className='fab fa-lg fa-twitter twitter'></i>
                     </div>
 
-                    <div className='socialIcon '>
+                    <div className='socialIconC '>
                         <svg height='4rem' width='4rem'>
                             <circle
                                 cx='2rem'

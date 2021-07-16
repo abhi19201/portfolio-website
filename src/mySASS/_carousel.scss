@@ -9,7 +9,8 @@
     flex-direction: row;
     color: white;
     left: 0.5vw;
-    bottom: 0;
+    top: 120vh;
+    z-index: 10;
     //justify-content: center;
 
     .arrow1 {
@@ -134,7 +135,7 @@ animation: slideInL 1.5s ease-in-out forwards;
     overflow: hidden;
 }
 
-p {
+.projDes {
     line-height: 28px;
     transform: translateY(300px);
     animation: slideUp 0.8s ease-in-out forwards 0.8s;
@@ -176,7 +177,7 @@ p {
     height: auto;
 }
 
-h1 {
+.projHead {
     font-size: revert;
     color: var(--contrast-color);
     margin-bottom: 20px;
