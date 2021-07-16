@@ -1,0 +1,42 @@
+.socialPane {
+    position: fixed;
+    height: 40vh;
+    background-color: black;
+    top: 0;
+    right: 0;
+    width: 4.5rem;
+    z-index: 10;
+    border-radius: 0rem 0rem 0rem 2rem;
+    padding: 0.5rem;
+    opacity: 0;
+    animation: expandPane 1.8s ease-in-out forwards 3s;
+
+    .paneBorder {
+        position: relative;
+        height: 36vh;
+        border-left-width: 1px;
+        border-left-style: solid;
+        border-left-color: white;
+    }
+
+    .socialArray {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        height: 38vh;
+        justify-content: space-between;
+    }
+}
+
+
+@keyframes expandPane {
+    0% {
+        transform: translateX(400px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}

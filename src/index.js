@@ -5,6 +5,7 @@ import {HashRouter as Router} from "react-router-dom";
 import "./mySASS/_main.scss";
 
 
+
 ReactDOM.render(
   <Router>
     <App />

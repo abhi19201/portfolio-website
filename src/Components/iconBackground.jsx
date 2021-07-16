@@ -5,7 +5,7 @@ export default function Abhi(props) {
     useEffect(() => {
         const marqueeCollection = document.querySelector(".marquee-collection");
 
-        for(var i=0; i<15; i++)
+        for(var i=0; i<18; i++)
         marqueeCollection.appendChild(marqueeCollection.children[0].cloneNode(true));
 
     }, [])

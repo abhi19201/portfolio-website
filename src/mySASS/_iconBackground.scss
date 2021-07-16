@@ -7,7 +7,7 @@ $marquee-elements-width: ($marquee-width / $marquee-elements-displayed);
 $time: 1s;
 $marquee-animation-duration: ($marquee-elements * $time * 2);
 $number-of-cards: 10;
-$height: 4*54vh;
+
 
 @mixin desktopMix {
   @media (max-width : #{$desktop}) {
@@ -26,7 +26,7 @@ $height: 4*54vh;
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: $height;
+  height: 210vh;
 //   clip: rect(26vw, 100vw, 78vw, 0);
   background: rgba(17, 17, 17 , 0.66);;
   display: flex;

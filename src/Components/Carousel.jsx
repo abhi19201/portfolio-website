@@ -68,7 +68,7 @@ export default function Carousel() {
             onMouseOver={() => {
                 clearInterval(IntervalId.current);
             }}
-             onMouseOut={() => {
+            onMouseOut={() => {
                 IntervalId.current = setInterval(() => {
                     setCurrent((c) => {
                         if (c === GitData.length - 1) {
@@ -78,8 +78,11 @@ export default function Carousel() {
                         }
                     });
                 }, 5000);
-            }}
-        >
+                setDirection("rightSwipe");
+                setImgDirection("imgRightMove");
+            }}>
+
+            <div className="hoverTag">Hover To Pause</div>
             <Button
                 className='arrow1'
                 onClick={() => {
