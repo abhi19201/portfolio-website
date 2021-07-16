@@ -9,7 +9,11 @@
     position: relative;
     text-align: center;
     font-size: 2vw;
-    //right: 10vw;
+    color: #474544;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
     top: -2vw;
     color: rgb(131, 131, 131);
     margin-bottom: -4vh;
@@ -135,7 +139,7 @@ textarea {
     width: 25%;
     position: relative;
     left: 0%;
-    transition: all 0.8s ease-in-out ;
+    transition: all 0.8s ease-in-out;
 }
 
 .emailForm input[type="submit"] {

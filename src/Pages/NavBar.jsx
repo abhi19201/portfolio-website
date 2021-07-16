@@ -1,15 +1,16 @@
 import React from 'react';
-import Card from "../Components/Logo";
-import Resume from "../Content/Resume.pdf"
+import Resume from "../Content/Resume.pdf";
+import ABlogo from "../Components/ABLogo";
 
 export default function Navbar() {
     return (
         <div className='navBa'>
-            <div className='navTop'></div>
-            <div className='mylogo'>
-                <Card />
+            <div className='navTop'>
+                <div className='mylogo'>
+                    <ABlogo height='8vmax' />
+                </div>
             </div>
-            
+
             <ul className='navItems'>
                 <li
                     className='item item1'

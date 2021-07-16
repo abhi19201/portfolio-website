@@ -1,7 +1,6 @@
 import React from 'react';
 import '../mySASS/_social.scss';
 import './_footer.scss';
-import { address, Contacts } from '../Content/footerInfo';
 import FooterLayout from "../Components/FooterLayout.svg";
 import EmailForm from "../Components/EmailForm";
 
