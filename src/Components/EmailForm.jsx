@@ -4,7 +4,9 @@ export default function EmailForm() {
     return (
         <div>
             <form method='post' class='emailForm' novalidate='novalidate'>
-                <h1 className="formHeading" >&bull; Email Me &bull;</h1>
+                <h1 className='formHeading' id='footer'>
+                    &bull; Email Me &bull;
+                </h1>
                 <div class='underline'></div>
                 <div class='contact-emailForm-footer'>
                     <p>

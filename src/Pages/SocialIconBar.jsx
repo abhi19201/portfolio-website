@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import "../mySASS/_social.scss";
 
 export default function SocialIconBar() {
-
     const [hideSideBar, setHideBar] = useState(" ");
 
     const changeBarView = () => {

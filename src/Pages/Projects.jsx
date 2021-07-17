@@ -8,7 +8,7 @@ import Footer from "../Structure/Footer";
 export default function Projects() {
     return (
         <div >
-            <h1 className='skills' id='project'>
+            <h1 className='skills' id='skills'>
                 Skills
             </h1>
             <div className='iconsBackground'>

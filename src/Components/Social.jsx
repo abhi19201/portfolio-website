@@ -1,5 +1,6 @@
 import React from 'react'
-import ('dotenv');
+import('dotenv');
+
 
 
 const insta = "https://www.instagram.com/abhiwankhade_/";
@@ -25,6 +26,7 @@ export default function Social(props) {
                 <svg height="80" width="80">
                     <circle cx="40" cy="40" r="2vmax" stroke="white" strokeWidth="4" fill="none"></circle>
                 </svg>
+                
                 <i className="fab fa-facebook fa-2x"  onClick={()=>{window.open(fb, "_blank")}}></i>
             </div>
 

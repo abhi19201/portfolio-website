@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Resume from "../Content/Resume.pdf";
 import ABlogo from "../Components/ABLogo";
 
@@ -29,6 +29,15 @@ export default function Navbar() {
                             .scrollIntoView({ behavior: "smooth" });
                     }}>
                     About
+                </li>
+                <li
+                    className='item item3'
+                    onClick={() => {
+                        document
+                            .getElementById("skills")
+                            .scrollIntoView({ behavior: "smooth" });
+                    }}>
+                    Skills
                 </li>
                 <li
                     className='item item3'

@@ -10,7 +10,7 @@ function Footer(props){
     // window.addEventListener('resize', ()=>{setScreenSize(window.screen.width)});
 
     return (
-        <div className='main' id='footer'>
+        <div className='main' >
             <footer>
                 <img src={FooterLayout} alt='layout' />
                 <div className='svgBorder2'></div>
