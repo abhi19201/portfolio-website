@@ -1,18 +1,17 @@
-import React from 'react';
-import '../mySASS/_social.scss';
+import React,{useState} from 'react';
 import './_footer.scss';
-import FooterLayout from "../Components/FooterLayout.svg";
-import EmailForm from "../Components/EmailForm";
+import FooterLayout from "../FooterLayout.svg";
+import EmailForm from "../EmailForm";
 
 function Footer(props){
 
-    // const [screenSize, setScreenSize] = useState(window.screen.width);
-    // window.addEventListener('resize', ()=>{setScreenSize(window.screen.width)});
+    const [screenSize, setScreenSize] = useState(window.screen.width);
+    window.addEventListener('resize', ()=>{setScreenSize(window.screen.width)});
 
     return (
         <div className='main' >
             <footer>
-                <img src={FooterLayout} alt='layout' />
+                { screenSize >= 1070 ? (<img src={FooterLayout} alt='layout' />) : null }
                 <div className='svgBorder2'></div>
                 <div className='svgBorder3'></div>
                 <EmailForm/>

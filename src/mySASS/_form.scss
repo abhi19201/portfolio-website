@@ -1,22 +1,30 @@
+@import "./media";
+
 .emailForm {
     position: absolute;
     bottom: 20vh;
     right: 6vw;
     width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
 .formHeading {
     position: relative;
-    text-align: center;
-    font-size: 2vw;
-    color: #474544;
-    font-weight: 700;
-    letter-spacing: 7px;
-    text-align: center;
-    text-transform: uppercase;
     top: -2vw;
-    color: rgb(131, 131, 131);
     margin-bottom: -4vh;
+    align-self: flex-end;
+
+    h1 {
+        font-size: 2vw;
+        color: #474544;
+        font-weight: 700;
+        letter-spacing: 7px;
+        text-align: center;
+        text-transform: uppercase;
+        top: -2vw;
+        color: rgb(131, 131, 131);
+    }
 }
 
 .underline {
@@ -159,4 +167,48 @@ textarea {
         rgba(9, 34, 255, 0.129)
     );
     color: white;
+}
+
+//Small Laptop
+
+@include smallLaptop {
+    .emailForm {
+        width: 40%;
+    }
+}
+
+//Small Screen
+
+@include smallScreen {
+    .emailForm {
+        width: initial;
+        right: 4vw;
+        background: #0a0a23;
+        left: 4vw;
+        border-radius: 2vw;
+    }
+
+    .formHeading {
+        align-self: center !important;
+        position: relative;
+        top: 2vw;
+        margin: 1vw;
+        margin-top: 0;
+
+        h1{
+            font-size: 3vw;
+        }
+    }
+
+    .contact-emailForm-footer {
+        margin: 3vw;
+    }
+}
+
+@include mobile{
+    .formHeading{
+        h1{
+            font-size: 5vw;
+        }
+    }
 }

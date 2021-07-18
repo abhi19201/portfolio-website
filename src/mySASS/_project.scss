@@ -1,3 +1,5 @@
+@import "./media";
+
 .skills {
     position: relative;
     text-align: start;
@@ -76,4 +78,72 @@
     border-bottom: 1px solid white;
     width: 74rem;
     text-align: center;
+}
+
+@include smallScreen {
+    .Connect {
+        width: fit-content;
+        left: 4rem;
+        bottom: 34rem;
+        font-size: 9vw;
+        transform: rotate(0deg);
+        text-align: left;
+    }
+
+    .projects {
+        font-size: 7rem;
+        top: 118vh;
+    }
+
+    .skillsRow {
+        width: 100vw;
+        justify-content: space-evenly;
+        margin: 0;
+        margin-top: 12vh;
+        right: 0;
+    }
+}
+
+@include tablet {
+    .skills {
+        font-size: 20vw;
+        bottom: -10vh;
+    }
+
+    .skillsColumn {
+        div {
+            img {
+                height: 12vw !important;
+            }
+            h3 {
+                font-size: 4vw !important;
+            }
+        }
+    }
+
+    .projects {
+        font-size: 18vw;
+        top: 117vh;
+    }
+}
+
+@include mobile {
+    .skills {
+        font-size: 24vw;
+        bottom: -7vh;
+    }
+
+    .skillsBorder{
+        height: 55vh !important;
+    }
+
+    .projects{
+        top: 95vh;
+    }
+
+
+    .Connect{
+        font-size: 12vw;
+        left: 4vw;
+    }
 }

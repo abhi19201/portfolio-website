@@ -1,8 +1,11 @@
+@import "./media";
+
 .carousel {
     position: absolute;
     margin-top: 15vh;
     background-color: rgba(41, 41, 41, 0.4);
-    height: 70vh;
+    //height: 70vh;
+    height: 30rem;
     width: 90vw;
     margin-left: 1vw;
     display: flex;
@@ -40,7 +43,8 @@
         flex-direction: column;
         justify-content: center;
         top: 0;
-        height: 70vh;
+        //height: 70vh;
+        height: 30rem;
         z-index: 1;
     }
 
@@ -66,12 +70,12 @@
     }
 }
 
-.hoverTag{
+.hoverTag {
     position: absolute;
     right: 0;
     background: black;
     padding: 10px;
-    padding-right: 2vw;
+    padding-right: 18px;
 }
 
 :root {
@@ -84,7 +88,8 @@
     padding-left: 10vw;
     padding-right: 10vw;
     display: flex;
-    height: 70vh;
+    //height: 70vh;
+    height: 30rem;
     width: 90vw;
     justify-content: space-around;
     align-items: center;
@@ -94,11 +99,12 @@
     transition: all 0.8s ease;
 }
 
-.leftSwipe{
+
+.leftSwipe {
     animation: expandLeft 1.2s ease forwards;
 }
 
-.rightSwipe{
+.rightSwipe {
     animation: expandRight 1.2s ease forwards;
 }
 
@@ -123,12 +129,12 @@
     opacity: 0.8;
 }
 
-.imgRightMove{
-animation: slideInR 1.5s ease-in-out forwards;
+.imgRightMove {
+    animation: slideInR 1.5s ease-in-out forwards;
 }
 
-.imgLeftMove{
-animation: slideInL 1.5s ease-in-out forwards;
+.imgLeftMove {
+    animation: slideInL 1.5s ease-in-out forwards;
 }
 
 .par {
@@ -137,7 +143,7 @@ animation: slideInL 1.5s ease-in-out forwards;
 }
 
 .projDes {
-    line-height: 28px;
+    line-height: 22px;
     transform: translateY(300px);
     animation: slideUp 0.8s ease-in-out forwards 0.8s;
     color: #b8b8b8;
@@ -169,7 +175,8 @@ animation: slideInL 1.5s ease-in-out forwards;
     animation: slideUp 0.8s ease-in-out forwards 1s;
 }
 
-.gitIcon{
+
+.gitIcon {
     margin-right: 10px;
 }
 
@@ -210,7 +217,6 @@ animation: slideInL 1.5s ease-in-out forwards;
 
         .lan {
             padding: 5px;
-            
         }
     }
 }
@@ -244,11 +250,11 @@ animation: slideInL 1.5s ease-in-out forwards;
 
 @keyframes slideDown {
     0% {
-        transform: translateY(-30px) ;
+        transform: translateY(-30px);
         opacity: 1;
     }
     100% {
-        transform: translateY(0px) ;
+        transform: translateY(0px);
         opacity: 1;
     }
 }
@@ -270,3 +276,28 @@ animation: slideInL 1.5s ease-in-out forwards;
         transform: translateX(0px);
     }
 }
+
+
+@include tablet {
+    .carousel {
+        width: 100vw ;
+        left: 0;
+        margin-left: 0;
+    }
+
+    .carouselContainer{
+        width: 100vw;
+    }
+
+    .btns_more{
+        font-size: 1.5vw;
+        margin-top: 0;
+    }
+}
+
+@include mobile{
+    .carousel{
+        top: 90vh;
+    }
+}
+

@@ -1,6 +1,8 @@
+@import "./media";
+
 .socialPane {
     position: fixed;
-    height: 40vh;
+    height: 42vh;
     background-color: black;
     top: 0;
     right: 0;
@@ -11,6 +13,8 @@
     opacity: 0;
     transition: all 0.5s ease-out 0s;
     animation: expandPane 1.8s ease-in-out forwards 3s;
+    //
+    height: inherit !important;
 
     .paneBorder {
         position: relative;
@@ -18,6 +22,9 @@
         border-left-width: 1px;
         border-left-style: solid;
         border-left-color: white;
+        //
+        height: inherit !important;
+        top: -2vh;
     }
 
     .socialArray {
@@ -27,8 +34,14 @@
         top: 0;
         height: 38vh;
         justify-content: space-between;
+        //
+        height: fit-content !important;
+        position: relative;
+        top: 2vh;
     }
 }
+
+
 
 .hideBar{
     width: 0vw;
@@ -80,4 +93,22 @@ svg circle
 .socialIconC:hover i
 {
     color: white !important;
+}
+
+
+@include mobile{
+    .socialArray{
+        height: fit-content !important;
+        position: relative;
+        top: 2vh;
+    }
+
+    .paneBorder{
+        height: inherit !important;
+        top: -2vh;
+    }
+
+    .socialPane{
+        height: inherit !important;
+    }
 }

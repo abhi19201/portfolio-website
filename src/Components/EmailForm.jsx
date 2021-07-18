@@ -1,13 +1,28 @@
-import React from "react";
+import React,{useState} from "react";
 
 export default function EmailForm() {
+    const [screenSize, setScreenSize] = useState(window.screen.width);
+    window.addEventListener('resize', ()=>{setScreenSize(window.screen.width)});
+
     return (
         <div>
             <form method='post' class='emailForm' novalidate='novalidate'>
-                <h1 className='formHeading' id='footer'>
-                    &bull; Email Me &bull;
-                </h1>
-                <div class='underline'></div>
+                <div
+                    className='formHeading'
+                    style={
+                        screenSize > 1380
+                            ? { alignSelf: "center" }
+                            : { alignSelf: "flex-end" }
+                    }>
+                    <h1
+                        onClick={() => {
+                            console.log(screenSize);
+                        }}
+                        id='footer'>
+                        &bull; Email Me &bull;
+                    </h1>
+                    <div class='underline'></div>
+                </div>
                 <div class='contact-emailForm-footer'>
                     <p>
                         <span class='emailForm-control-wrap your-first-name'>

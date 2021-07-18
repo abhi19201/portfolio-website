@@ -10,6 +10,10 @@ export default function Carousel() {
     const [languages, setLanguages] = useState(null);
     const [swipeDirection, setDirection] = useState("rightSwipe");
     const [imgDirection, setImgDirection] = useState("imgRightMove");
+    const [screenSize, setScreenSize] = useState(window.screen.width);
+    window.addEventListener("resize", () => {
+        setScreenSize(window.screen.width);
+    });
     var IntervalId = useRef;
 
     useEffect(() => {
@@ -36,7 +40,7 @@ export default function Carousel() {
     }, [IntervalId]);
 
     const nextProject = () => {
-        setDirection('rightSwipe');
+        setDirection("rightSwipe");
         setImgDirection("imgRightMove");
         if (GitData) {
             setCurrent(current === GitData.length - 1 ? 0 : current + 1);
@@ -52,7 +56,7 @@ export default function Carousel() {
             });
 
     function prevProject() {
-        setDirection('leftSwipe');
+        setDirection("leftSwipe");
         setImgDirection("imgLeftMove");
         if (GitData)
             setCurrent(current === 0 ? GitData.length - 1 : current - 1);
@@ -81,8 +85,7 @@ export default function Carousel() {
                 setDirection("rightSwipe");
                 setImgDirection("imgRightMove");
             }}>
-
-            <div className="hoverTag">Hover To Pause</div>
+            <div className='hoverTag'>Hover To Pause</div>
             <Button
                 className='arrow1'
                 onClick={() => {
@@ -110,10 +113,12 @@ export default function Carousel() {
                                               <div class='container_content'>
                                                   <div class='container_content_inner'>
                                                       <div class='projTitle'>
-                                                          <h1 class="projHead" >{repo.name}</h1>
+                                                          <h1 class='projHead'>
+                                                              {repo.name}
+                                                          </h1>
                                                       </div>
                                                       <div class='par'>
-                                                          <p className="projDes" >
+                                                          <p className='projDes'>
                                                               {repo.description}
                                                           </p>
                                                       </div>
@@ -142,28 +147,30 @@ export default function Carousel() {
                                                           </Button>
                                                       </div>
 
-                                                      <div className='languages'>
-                                                          <div className='borderC'></div>
-                                                          <div className='lanCollection'>
-                                                              {languages
-                                                                  ? languages.map(
-                                                                        (
-                                                                            language,
-                                                                            key
-                                                                        ) => {
-                                                                            return (
-                                                                                <div className='lan'>
-                                                                                    {" "}
-                                                                                    {
-                                                                                        language
-                                                                                    }{" "}
-                                                                                </div>
-                                                                            );
-                                                                        }
-                                                                    )
-                                                                  : null}
+                                                      {screenSize >= 650 ? (
+                                                          <div className='languages'>
+                                                              <div className='borderC'></div>
+                                                              <div className='lanCollection'>
+                                                                  {languages
+                                                                      ? languages.map(
+                                                                            (
+                                                                                language,
+                                                                                key
+                                                                            ) => {
+                                                                                return (
+                                                                                    <div className='lan'>
+                                                                                        {" "}
+                                                                                        {
+                                                                                            language
+                                                                                        }{" "}
+                                                                                    </div>
+                                                                                );
+                                                                            }
+                                                                        )
+                                                                      : null}
+                                                              </div>
                                                           </div>
-                                                      </div>
+                                                      ) : null}
                                                   </div>
                                               </div>
                                               <div class='container_outer_img'>

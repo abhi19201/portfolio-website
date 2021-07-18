@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-//@import "../SASS/media";
+@import "../../mySASS//media";
 
 .main {
     position: absolute;
@@ -91,6 +91,7 @@
         }
     }
 }
+
 
 .logoF {
     filter: invert(95%) sepia(90%) saturate(10%) hue-rotate(220deg)
@@ -266,4 +267,19 @@ svg circle {
 
 .socialIcon:hover i {
     color: white !important;
+}
+
+@include smallScreen {
+    .svgBorder3 {
+        width: 20vw !important;
+        right: 40% !important;
+    }
+}
+
+
+@include tablet {
+    .main {
+        width: 100vw;
+        margin: 0;
+    }
 }

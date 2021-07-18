@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Background from "../Components/iconBackground";
-import ProjectArray from "../Content/Projects";
 import Carousel from "../Components/Carousel";
 import { skillSet1, skillSet2 } from "../Content/Skills";
-import Footer from "../Structure/Footer";
+import Footer from "../Components/Footer/Footer";
 
 export default function Projects() {
+    const [screenSize, setScreenSize] = useState(window.screen.width);
+    window.addEventListener("resize", () => {
+        setScreenSize(window.screen.width);
+    });
+
     return (
-        <div >
+        <div>
             <h1 className='skills' id='skills'>
                 Skills
             </h1>
@@ -41,13 +45,15 @@ export default function Projects() {
                         </div>
                     </div>
 
-                    <h1 className='projects' id='project' >
+                    <h1 className='projects' id='project'>
                         Projects
                     </h1>
 
-                    <Carousel projects={ProjectArray} />
+                    <Carousel />
 
-                    <h1 className='Connect'>Let's Connect ...</h1>
+                    <h1 className='Connect'>
+                        {screenSize <= 1070 ? "Contact Me" : "Contact Me ..."}
+                    </h1>
 
                     <Footer />
                 </div>
