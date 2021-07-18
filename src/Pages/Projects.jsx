@@ -23,9 +23,9 @@ export default function Projects() {
                 <div className='iconsBackContent'>
                     <div className='row skillsRow '>
                         <div className='column skillsColumn'>
-                            {skillSet1.map((skill) => {
+                            {skillSet1.map((skill, id) => {
                                 return (
-                                    <div>
+                                    <div key={id} >
                                         {skill.icon ? skill.icon : null}
                                         <h3>{skill.skill}</h3>
                                     </div>
@@ -34,9 +34,9 @@ export default function Projects() {
                         </div>
                         <div className='skillsBorder'></div>
                         <div className='column skillsColumn'>
-                            {skillSet2.map((skill) => {
+                            {skillSet2.map((skill, id) => {
                                 return (
-                                    <div>
+                                    <div key={id}>
                                         {skill.icon ? skill.icon : null}
                                         <h3>{skill.skill}</h3>
                                     </div>

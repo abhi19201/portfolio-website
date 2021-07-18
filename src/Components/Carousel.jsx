@@ -109,23 +109,23 @@ export default function Carousel() {
                                   {index === current && (
                                       <div>
                                           <div
-                                              class={`carouselContainer ${swipeDirection}`}>
-                                              <div class='container_content'>
-                                                  <div class='container_content_inner'>
-                                                      <div class='projTitle'>
-                                                          <h1 class='projHead'>
+                                              className={`carouselContainer ${swipeDirection}`}>
+                                              <div className='container_content'>
+                                                  <div className='container_content_inner'>
+                                                      <div className='projTitle'>
+                                                          <h1 className='projHead'>
                                                               {repo.name}
                                                           </h1>
                                                       </div>
-                                                      <div class='par'>
+                                                      <div className='par'>
                                                           <p className='projDes'>
                                                               {repo.description}
                                                           </p>
                                                       </div>
-                                                      <div class='btns'>
+                                                      <div className='btns'>
                                                           {repo.homepage ? (
                                                               <Button
-                                                                  class='btns_more'
+                                                                  className='btns_more'
                                                                   onClick={() => {
                                                                       window.open(
                                                                           repo.homepage
@@ -136,7 +136,7 @@ export default function Carousel() {
                                                               </Button>
                                                           ) : null}
                                                           <Button
-                                                              class='btns_more'
+                                                              className='btns_more'
                                                               onClick={() => {
                                                                   window.open(
                                                                       repo.html_url
@@ -155,10 +155,10 @@ export default function Carousel() {
                                                                       ? languages.map(
                                                                             (
                                                                                 language,
-                                                                                key
+                                                                                id
                                                                             ) => {
                                                                                 return (
-                                                                                    <div className='lan'>
+                                                                                    <div className='lan' key={id}>
                                                                                         {" "}
                                                                                         {
                                                                                             language
@@ -173,17 +173,17 @@ export default function Carousel() {
                                                       ) : null}
                                                   </div>
                                               </div>
-                                              <div class='container_outer_img'>
-                                                  <div class='img-inner'>
+                                              <div className='container_outer_img'>
+                                                  <div className='img-inner'>
                                                       <img
                                                           src={`https://raw.githubusercontent.com/abhi19201/${repo.name}/master/screenshot.png`}
                                                           alt=''
-                                                          class={`container_img ${imgDirection}`}
+                                                          className={`container_img ${imgDirection}`}
                                                       />
                                                   </div>
                                               </div>
                                           </div>
-                                          <div class='overlay'></div>
+                                          <div className='overlay'></div>
                                       </div>
                                   )}
                               </div>
