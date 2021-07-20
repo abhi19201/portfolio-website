@@ -125,6 +125,11 @@
         font-size: 18vw;
         top: 117vh;
     }
+
+    .Connect {
+        bottom: 40rem;
+        font-size: 10vw;
+    }
 }
 
 @include mobile {
@@ -133,16 +138,15 @@
         bottom: -7vh;
     }
 
-    .skillsBorder{
+    .skillsBorder {
         height: 55vh !important;
     }
 
-    .projects{
+    .projects {
         top: 95vh;
     }
 
-
-    .Connect{
+    .Connect {
         font-size: 12vw;
         left: 4vw;
     }

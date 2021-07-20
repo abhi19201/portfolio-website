@@ -1,15 +1,17 @@
-::-webkit-scrollbar {
-    width: 7px;
-	background-color: #F5F5F5;
+html:focus-within {
+    scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar-track {
-    border: 1px solid black;
-	background-color: #c9c9c9;
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #000958;	
-    border-radius: 25px;
-} 
+    background-color: #587798;
+    border-radius: 5px;
+}
 
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}

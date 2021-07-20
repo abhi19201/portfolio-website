@@ -12,6 +12,26 @@ export default function Navbar() {
         setScreenSize(window.screen.width);
     });
 
+    function navButton() {
+        setnavOpen(!navOpen);
+        if (!navOpen2) {
+            setnavOpen2(true);
+            setNavClose("");
+        } else {
+            setNavClose("closeAnnimation");
+            setTimeout(() => {
+                setnavOpen2(false);
+            }, 1000);
+        }
+        setState((s) => {
+            if (s === "") {
+                return "is-active";
+            } else {
+                return "";
+            }
+        });
+    }
+
     return (
         <div>
             {screenSize <= 768 ? (
@@ -19,24 +39,7 @@ export default function Navbar() {
                     <button
                         className={`hamburger hamburger--arrowalt ${navState} ham`}
                         onClick={() => {
-                            setnavOpen(!navOpen);
-                            if (!navOpen2) {
-                                console.log("hi");
-                                setnavOpen2(true);
-                                setNavClose("");
-                            } else {
-                                setNavClose("closeAnnimation");
-                                setTimeout(() => {
-                                    setnavOpen2(false);
-                                }, 1000);
-                            }
-                            setState((s) => {
-                                if (s === "") {
-                                    return "is-active";
-                                } else {
-                                    return "";
-                                }
-                            });
+                            navButton();
                         }}
                         type='button'>
                         <span className='hamburger-box'>
@@ -50,11 +53,7 @@ export default function Navbar() {
                     <div className={`navBa ${navClose}`} id='navBar'>
                         <div>
                             <div className='navTop'>
-                                <div
-                                    className='mylogo'
-                                    onClick={() => {
-                                        setnavOpen(false);
-                                    }}>
+                                <div className='mylogo'>
                                     <ABlogo
                                         height={
                                             screenSize <= 768
@@ -76,6 +75,7 @@ export default function Navbar() {
                                 <li
                                     className='item item1'
                                     onClick={() => {
+                                        if (screenSize <= 768) navButton();
                                         document
                                             .getElementById("top")
                                             .scrollIntoView({
@@ -87,6 +87,7 @@ export default function Navbar() {
                                 <li
                                     className='item item2'
                                     onClick={() => {
+                                        if (screenSize <= 768) navButton();
                                         document
                                             .getElementById("about")
                                             .scrollIntoView({
@@ -98,6 +99,7 @@ export default function Navbar() {
                                 <li
                                     className='item item3'
                                     onClick={() => {
+                                        if (screenSize <= 768) navButton();
                                         document
                                             .getElementById("skills")
                                             .scrollIntoView({
@@ -109,6 +111,7 @@ export default function Navbar() {
                                 <li
                                     className='item item3'
                                     onClick={() => {
+                                        if (screenSize <= 768) navButton();
                                         document
                                             .getElementById("project")
                                             .scrollIntoView({
@@ -120,6 +123,7 @@ export default function Navbar() {
                                 <li
                                     className='item item4'
                                     onClick={() => {
+                                        if (screenSize <= 768) navButton();
                                         document
                                             .getElementById("footer")
                                             .scrollIntoView({
@@ -131,6 +135,7 @@ export default function Navbar() {
                                 <li
                                     className='item item4'
                                     onClick={() => {
+                                        if (screenSize <= 768) navButton();
                                         window.location.href = Resume;
                                     }}>
                                     Resume

@@ -1,81 +1,32 @@
 import React from "react";
 import AOS from "aos";
-//import Particles from "react-particles-js";
 import "aos/dist/aos.css";
 import Profile from "../Content/Profile.jpg";
-import Particles from "react-tsparticles";
+import Particles from "particlesjs";
 
 AOS.init({
     delay: 3000,
     duration: 800,
 });
 
+window.onload = function () {
+    Particles.init({
+        selector: ".background",
+        connectParticles: true,
+        color: "#FFFFFF",
+        speed: 2,
+        maxParticles: 70,
+        sizeVariations: 6,
+    });
+};
+
 export default function Home() {
-    //tsParticles.load("tsparticles", );
 
     return (
         <div className='particleBackground'>
-            <Particles
-                options={{
-                    fpsLimit: 300,
-                    particles: {
-                        number: {
-                            value: 30,
-                            density: {
-                                enable: true,
-                                value_area: 800,
-                            },
-                        },
-                        color: {
-                            value: "#ffffff",
-                        },
-                        shape: {
-                            type: "circle",
-                        },
-                        opacity: {
-                            value: 1,
-                            random: false,
-                            anim: {
-                                enable: false,
-                                speed: 1,
-                                opacity_min: 0.1,
-                                sync: false,
-                            },
-                        },
-                        size: {
-                            value: 5,
-                            random: true,
-                            anim: {
-                                enable: false,
-                                speed: 30,
-                                size_min: 0.1,
-                                sync: false,
-                            },
-                        },
-                        line_linked: {
-                            enable: true,
-                            distance: 150,
-                            color: "#ffffff",
-                            opacity: 1,
-                            width: 1,
-                        },
-                        move: {
-                            enable: true,
-                            speed: 2,
-                            direction: "none",
-                            random: false,
-                            straight: false,
-                            out_mode: "out",
-                            attract: {
-                                enable: false,
-                                rotateX: 600,
-                                rotateY: 1200,
-                            },
-                        },
-                    },
-                }}
-            />
-
+            <canvas class='background'></canvas>
+            {/* https://marcbruederlin.github.io/particles.js/#documentation */}
+            
             <div className='profileImg'>
                 <div
                     className='profile'
@@ -89,7 +40,6 @@ export default function Home() {
                 <div className='imgStripe2'></div>
                 <div className='imgStripe3'></div>
             </div>
-
             <div className='home'>
                 <div className='title'>
                     <div className='inner-title'>

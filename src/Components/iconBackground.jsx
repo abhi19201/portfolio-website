@@ -1,27 +1,36 @@
 import React, { useState, useEffect } from "react";
 
 export default function IconBackground(props) {
-    const [screenSize, setScreenSize] = useState(window.screen.width);
+    const [screenHeight, setScreenHeight] = useState(window.screen.height);
+
     window.addEventListener("resize", () => {
-        setScreenSize(window.screen.width);
+        setScreenHeight(window.screen.height);
     });
 
     useEffect(() => {
         const marqueeCollection = document.querySelector(".marquee-collection");
 
-        var numOfIconArrays;
+        var numOfIconArrays = 15;
 
-        if (screenSize <= 480) {
+        if (screenHeight >= 900) {
+            numOfIconArrays = 14;
+        } else if (screenHeight >= 750) {
             numOfIconArrays = 16;
-        } else {
+        } else if (screenHeight >= 680) {
             numOfIconArrays = 17;
+        } else if (screenHeight >= 630) {
+            numOfIconArrays = 18;
+        } else if (screenHeight <= 580) {
+            numOfIconArrays = 19;
+        } else {
+            numOfIconArrays = 20;
         }
 
         for (var i = 0; i < numOfIconArrays; i++)
             marqueeCollection.appendChild(
                 marqueeCollection.children[0].cloneNode(true)
             );
-    }, [screenSize]);
+    }, [screenHeight]);
 
     function bgSchema() {
         return (
