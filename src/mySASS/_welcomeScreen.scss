@@ -310,6 +310,14 @@ content {
     text-align: justify;
 }
 
+.clickText{
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration-style: dashed;
+    text-decoration-color: #ffdfba;
+    text-underline-position: under;
+}
+
 @include tablet {
     .body {
         margin-left: 0;

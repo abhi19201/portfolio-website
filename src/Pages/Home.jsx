@@ -3,30 +3,22 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Profile from "../Content/Profile.jpg";
 import Particles from "particlesjs";
+import Par from "./homeParticles";
 
 AOS.init({
     delay: 3000,
     duration: 800,
 });
 
-window.onload = function () {
-    Particles.init({
-        selector: ".background",
-        connectParticles: true,
-        color: "#FFFFFF",
-        speed: 2,
-        maxParticles: 70,
-        sizeVariations: 6,
-    });
-};
+
 
 export default function Home() {
 
     return (
         <div className='particleBackground'>
-            <canvas class='background'></canvas>
+            <Par/>
             {/* https://marcbruederlin.github.io/particles.js/#documentation */}
-            
+
             <div className='profileImg'>
                 <div
                     className='profile'
