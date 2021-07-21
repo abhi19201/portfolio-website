@@ -22,6 +22,7 @@ export default function Carousel() {
         fetch("https://api.github.com/users/Abhi19201/repos")
             .then((res) => res.json())
             .then((data) => {
+                console.log("hello ji" + Object.values(data));
                 gitProjects = data.slice();
                 setGitData([...data]);
             });
@@ -158,7 +159,11 @@ export default function Carousel() {
                                                                                 id
                                                                             ) => {
                                                                                 return (
-                                                                                    <div className='lan' key={id}>
+                                                                                    <div
+                                                                                        className='lan'
+                                                                                        key={
+                                                                                            id
+                                                                                        }>
                                                                                         {" "}
                                                                                         {
                                                                                             language

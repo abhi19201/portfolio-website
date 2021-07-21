@@ -2,7 +2,6 @@ import React from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Profile from "../Content/Profile.jpg";
-import Particles from "particlesjs";
 import Par from "./homeParticles";
 
 AOS.init({
