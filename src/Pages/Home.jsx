@@ -9,10 +9,7 @@ AOS.init({
     duration: 800,
 });
 
-
-
 export default function Home() {
-
     return (
         <div className='particleBackground'>
             <Par/>

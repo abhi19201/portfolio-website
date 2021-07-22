@@ -92,7 +92,6 @@
     }
 }
 
-
 .logoF {
     filter: invert(95%) sepia(90%) saturate(10%) hue-rotate(220deg)
         brightness(102%) contrast(99%);
@@ -146,7 +145,7 @@
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 10vw;
     border-top: 1px solid #313646;
     background-color: #545d91 !important;
@@ -162,7 +161,22 @@
     .copyright {
         padding: 1.5vh;
         font-size: 1vw;
+        display: flex;
+        align-items: center;
+
+        span {
+            cursor: pointer;
+        }
+
+        .location {
+            font-size: 1rem;
+        }
     }
+}
+
+.footer-B {
+    width: fit-content !important;
+    padding: 0 !important;
 }
 
 #footer-menu {
@@ -194,22 +208,22 @@
     display: flex;
 }
 
-.facebook {
-    color: #4e64b5;
+.fa-gmail {
+    content: url("../gmail.svg");
+    height: 1em;
+    width: auto;
+}
+
+.github {
+    color: #fafafa;
+}
+
+.linkedin {
+    color: #1c3aa7;
 }
 
 .twitter {
     color: #00aced;
-}
-.instagram {
-    color: #9a8f62;
-}
-.youtube {
-    color: #c82929;
-}
-
-.telegram {
-    color: #2ca5e0;
 }
 
 //SOCIAL ICONS
@@ -230,24 +244,24 @@
 }
 
 .socialIcon:hover {
-    background: #e60073;
-    box-shadow: 0px 0px 1px #ffb6db;
+    background: #000000;
+    box-shadow: 0px 0px 1px #363636;
 }
 
-.socialIcon:hover:nth-child(2) {
-    background: #1877f2;
-    box-shadow: 0px 0px 1px #a9ceff;
-}
+//.socialIcon:hover:nth-child(2) {
+//     background: #0062d3;
+//     box-shadow: 0px 0px 1px #ffcaca;
+// }
 
-.socialIcon:hover:nth-child(4) {
-    background: black;
-    box-shadow: 0px 0px 1px rgb(124, 124, 124);
-}
+// .socialIcon:hover:nth-child(4) {
+//     background: black;
+//     box-shadow: 0px 0px 1px rgb(124, 124, 124);
+// }
 
-.socialIcon:hover:nth-child(3) {
-    background: #1da1f2;
-    box-shadow: 0px 0px 1px #a5dbfd;
-}
+// .socialIcon:hover:nth-child(3) {
+//     background: #1da1f2;
+//     box-shadow: 0px 0px 1px #a5dbfd;
+// }
 
 .socialIcon i {
     position: absolute;
@@ -265,10 +279,6 @@ svg circle {
     stroke-dasharray: 15;
 }
 
-.socialIcon:hover i {
-    color: white !important;
-}
-
 @include smallScreen {
     .svgBorder3 {
         width: 20vw !important;
@@ -276,10 +286,26 @@ svg circle {
     }
 }
 
-
 @include tablet {
     .main {
         width: 100vw;
         margin: 0;
+    }
+}
+
+.mapI {
+    margin: 0;
+    margin-right: 1vw;
+
+    .mapIcon {
+        content: url("../gmap.svg");
+        height: 2rem;
+        width: auto;
+    }
+}
+
+@include mobile {
+    .footer-bottom {
+        padding: 2vw;
     }
 }

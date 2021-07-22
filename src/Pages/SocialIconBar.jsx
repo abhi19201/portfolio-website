@@ -4,13 +4,9 @@ import React, { useState } from "react";
 export default function SocialIconBar() {
     const [hideSideBar, setHideBar] = useState(" ");
     const [screenSize, setScreenSize] = useState(window.screen.width);
-    const [screenRatio, setScreenRatio] = useState(
-        window.screen.height
-    );
 
     window.addEventListener("resize", () => {
         setScreenSize(window.screen.width);
-        setScreenRatio(window.screen.height);
     });
     const changeBarView = () => {
         if (window.scrollY >= 1900) {
@@ -25,14 +21,14 @@ export default function SocialIconBar() {
     window.addEventListener("scroll", changeBarView);
 
     var Icons = [
-        "fab fa-instagram fa-lg instagram",
-        "fab fa-lg fa-facebook-f facebook",
+        "fab fa-github fa-lg github",
+        "fab fa-lg fa-gmail facebook",
+        "fab fa-lg fa-linkedin linkedin",
         "fab fa-lg fa-twitter twitter",
-        "fab fa-lg fa-youtube youtube",
     ];
 
     return (
-        <div className={`socialPane ${hideSideBar}`} onClick={()=>{console.log(screenRatio + "hi " + screenSize);}} >
+        <div className={`socialPane ${hideSideBar}`}  >
             <div className='paneBorder'>
                 <div className='socialArray' >
                     

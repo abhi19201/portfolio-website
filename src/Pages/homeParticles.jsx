@@ -28,7 +28,7 @@ export default function HomeParticles() {
 
     return (
         <div>
-            <canvas class='background'></canvas>
+            <canvas className='background'></canvas>
         </div>
     );
 }
