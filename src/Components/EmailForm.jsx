@@ -55,7 +55,7 @@ export default function EmailForm() {
         };
 
         axios
-            .post("api/sendMail", emailData)
+            .post("https://ab-server19.herokuapp.com/api/sendMail", emailData)
             .then(function (response) {
                 if (response.status === 200) {
                     console.log("Mail SuccessFull");
