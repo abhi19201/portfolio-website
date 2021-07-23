@@ -5,6 +5,15 @@ const bodyParser = require("body-parser");
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
 
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+const PORT = process.env.PORT || 4000;
+
+app.use(morgan("tiny"));
+
+
 async function sendMail(mailOptions) {
     let transporter = nodemailer.createTransport({
         service: "gmail",
@@ -27,13 +36,6 @@ async function sendMail(mailOptions) {
     });
 }
 
-const app = express();
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-const PORT = process.env.PORT || 4000;
-
-app.use(morgan("tiny"));
 
 app.post("/api/sendMail", (req, res) => {
     let mailOptions = {

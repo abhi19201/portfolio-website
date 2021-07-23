@@ -56,7 +56,7 @@
         "eject": "react-scripts eject",
         "build-client": "npm run build",
         "install-client": "npm install",
-        "heroku-postbuild": "npm run install-client && npm run build-client",
+        "heroku-postbuild": "npm run install-client && nodemon server.js",
         "client": "npm start",
         "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"npm run client\""
     },
