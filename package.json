@@ -53,13 +53,7 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject",
-        "build-client": "npm run build",
-        "install-client": "npm install",
-        "heroku-postbuild": "npm run install-client && node server.js",
-        "client": "npm start",
-        "start-server": "node server.js", 
-        "dev": "concurrently -n 'server,client' -c 'red,green' \"nodemon server.js\" \"npm run client\""
+        "eject": "react-scripts eject"
     },
     "eslintConfig": {
         "extends": [
