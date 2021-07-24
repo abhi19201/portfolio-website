@@ -112,11 +112,15 @@ export default function EmailForm() {
                     if (response.status === 200) {
                         handleOpen();
                         console.log("Mail SuccessFull");
+                        setName("");
+                        setEmail("");
+                        setMessage("");
                     }
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
+
         }
     };
 
