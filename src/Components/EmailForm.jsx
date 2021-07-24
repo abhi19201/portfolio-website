@@ -95,10 +95,12 @@ export default function EmailForm() {
             setErrorCode("message");
             handleError();
         } else {
+            var htmlMessage = `<div> <h1 style="color:#c2d9ff; font-weight: 200;" > Email Id of the Sender is ${email} </h1> <h2 style="font-weight: 400;" > ${message} </h2> </div>`;
+
             var emailData = {
                 name,
                 email,
-                message,
+                htmlMessage,
             };
 
             axios
