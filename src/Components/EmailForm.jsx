@@ -114,6 +114,22 @@ export default function EmailForm() {
                 });
         }
 
+        var emailData = {
+            name,
+            email,
+            message,
+        };
+
+        axios
+            .post("https://ab-server19.herokuapp.com/api/sendMail", emailData)
+            .then(function (response) {
+                if (response.status === 200) {
+                    console.log("Mail SuccessFull");
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     return (
