@@ -76,7 +76,7 @@ export default function EmailForm() {
         e.preventDefault();
         var mailformat =
             /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-        
+
         var nameFormat = /^[A-Za-z\s]+$/;
 
         if (name === "") {
@@ -102,7 +102,10 @@ export default function EmailForm() {
             };
 
             axios
-                .post("api/sendMail", emailData)
+                .post(
+                    "https://ab-server19.herokuapp.com/api/sendMail",
+                    emailData
+                )
                 .then(function (response) {
                     if (response.status === 200) {
                         handleOpen();
@@ -113,23 +116,6 @@ export default function EmailForm() {
                     console.log(error);
                 });
         }
-
-        var emailData = {
-            name,
-            email,
-            message,
-        };
-
-        axios
-            .post("https://ab-server19.herokuapp.com/api/sendMail", emailData)
-            .then(function (response) {
-                if (response.status === 200) {
-                    console.log("Mail SuccessFull");
-                }
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
     };
 
     return (
