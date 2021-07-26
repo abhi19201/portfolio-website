@@ -1,0 +1,21 @@
+@use "sass:math";
+
+@import "./home";
+@import "./iconBackground";
+@import "./welcomeScreen";
+@import "./logoLines.scss";
+@import "./socialPane";
+@import "./project";
+@import "./form";
+@import "./navbar";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+
+//----//
+@import "./carousel";
+@import "./media";
+@import "./footer";
+
+body {
+    overflow-x: hidden;
+    user-select: none;
+}

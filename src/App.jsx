@@ -1,5 +1,5 @@
 import React from "react";
-import Main from "./Pages/Main";
+import Main from "./pages/Main";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import "font-awesome/css/font-awesome.min.css";
 

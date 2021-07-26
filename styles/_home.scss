@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Mate+SC&display=swap");
+@import "./media";
+
+.home {
+    position: absolute;
+}
+
+.profileImg {
+    position: absolute;
+    //right: -5vw;
+    width: 32vw;
+    right: 0vw;
+    margin-bottom: 20vh;
+    .profile {
+        .proImg {
+            width: 22vw;
+            border-radius: 3vw;
+        }
+    }
+
+    .imgStripe1 {
+        height: 6vh;
+        width: 30vw;
+        background: #062543c2;
+        position: relative;
+        border-radius: 2vw;
+        transform: rotate(-60deg);
+        z-index: -1;
+        bottom: 32vh;
+        right: 16vw;
+        opacity: 0;
+        animation: strip1 1s 1s ease-out forwards;
+    }
+
+    .imgStripe2 {
+        height: 6vh;
+        width: 34vw;
+        background: #04305ac2;
+        position: relative;
+        border-radius: 2vw;
+        transform: rotate(-60deg);
+        z-index: -1;
+        bottom: 24vh;
+        right: 7vw;
+        opacity: 0;
+        animation: strip2 1s 1s ease-out forwards;
+    }
+
+    .imgStripe3 {
+        height: 6vh;
+        width: 35vw;
+        background: #062543c2;
+        position: relative;
+        border-radius: 2vw;
+        transform: rotate(-60deg);
+        z-index: -1;
+        bottom: 16vh;
+        right: -2vw;
+        opacity: 0;
+        animation: strip3 1s 1s ease-out forwards;
+    }
+}
+
+.title {
+    position: relative;
+    top: -15vh;
+    padding-left: 5vw;
+    // grid-column: 1 / -1;
+    // grid-row: 1;
+    color: white;
+    font-family: "Mate SC", serif;
+    font-weight: 800;
+    width: 100%;
+    z-index: 2;
+
+    // start
+
+    > .inner-title {
+        display: inline-block;
+    }
+}
+
+@keyframes text-clip {
+    from {
+        clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+}
+
+@keyframes outer-left {
+    from {
+        transform: translateX(50%);
+    }
+    to {
+        transform: none;
+    }
+}
+
+@keyframes inner-left {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: none;
+    }
+}
+
+.hi,
+.name {
+    animation: outer-left 1.5s 2s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.inner-title {
+    display: inline-block;
+    animation: inner-left 1.5s 2s ease both;
+}
+
+.inner-hi {
+    display: inline-block;
+    animation: inner-left 1.5s 2s ease both,
+        text-clip 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.inner-name {
+    animation: text-clip 1.5s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+
+.title {
+    animation: outer-left 1s 2s ease both;
+}
+
+.hi {
+    font-size: 5.3vw;
+    // start
+    > .inner-hi {
+        display: inline-block;
+    }
+}
+
+.name {
+    font-size: 5vw;
+    display: inline-block;
+}
+
+.profession {
+    font-size: 3vw;
+}
+
+.image {
+    grid-row: 1;
+    grid-column: 2;
+    margin-left: -2rem;
+    opacity: 0.7;
+
+    animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+
+    @keyframes image-in {
+        from {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+        to {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@keyframes strip1 {
+    from {
+        bottom: 80vh;
+        right: -0vw;
+        opacity: 0;
+    }
+    to {
+        bottom: 32vh;
+        right: 16vw;
+        opacity: 1;
+    }
+}
+
+@keyframes strip2 {
+    from {
+        bottom: 80vh;
+        right: -0vw;
+        opacity: 0;
+    }
+    to {
+        bottom: 24vh;
+        right: 7vw;
+        opacity: 1;
+    }
+}
+
+@keyframes strip3 {
+    from {
+        bottom: 80vh;
+        right: -0vw;
+        opacity: 0;
+    }
+    to {
+        bottom: 16vh;
+        right: -2vw;
+        opacity: 1;
+    }
+}
+
+@include tablet {
+    .profileImg {
+        bottom: 32vh;
+        right: 30vw;
+        margin-bottom: 8vh;
+    }
+
+    .proImg {
+        width: 32vw !important;
+    }
+
+    .home {
+        top: 70vh;
+    }
+
+    .particleBackground {
+        flex-direction: column !important;
+    }
+
+    .imgStripe1,
+    .imgStripe2,
+    .imgStripe3 {
+        height: 4vh !important;
+        width: 36vw !important;
+    }
+
+    .hi,
+    .name {
+        font-size: 7vw;
+    }
+
+    .profession {
+        font-size: 4vw;
+    }
+}
+
+@include mobile {
+    .imgStripe1,
+    .imgStripe2,
+    .imgStripe3 {
+        height: 4vh !important;
+        width: 50vw !important;
+    }
+
+    .profileImg {
+        right: 40vw;
+    }
+
+    .proImg {
+        width: 50vw !important;
+    }
+
+    .hi,
+    .name {
+        font-size: 10vw;
+    }
+
+    .profession {
+        font-size: 5vw;
+    }
+}

@@ -1,0 +1,136 @@
+@import "./media";
+
+
+$desktop: 700px;
+$marquee-width: 100vw;
+$marquee-height: 18vh;
+$marquee-elements: 17;
+$marquee-elements-displayed: 9;
+$marquee-elements-width: 11.11vw; //calc($marquee-width / $marquee-elements-displayed);
+$time: 1s;
+$marquee-animation-duration: 40s; //  calc($marquee-elements * $time * 2);
+$number-of-cards: 10;
+
+@mixin desktopMix {
+    @media (max-width : #{$desktop}) {
+        @content;
+    }
+}
+
+.marquee-collection {
+    margin: 0;
+    padding: 0;
+    z-index: -2;
+}
+
+.marquee-collection {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    //height: 210vh;
+    background: rgba(17, 17, 17, 0.66);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //overflow: hidden;
+}
+
+.marquee-collection::before,
+.marquee-collection::after {
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+}
+
+.marquee-collection::before {
+    left: 0;
+    background: linear-gradient(to right, #111 0%, transparent 100%);
+}
+
+.marquee-collection::after {
+    right: 0;
+    background: linear-gradient(to left, #111 0%, transparent 100%);
+}
+
+.marquee-collection .marquee {
+    position: relative;
+    top: -45vh;
+    width: $marquee-width;
+    height: $marquee-height;
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+    white-space: nowrap;
+    font-size: 70px;
+    letter-spacing: 0.5em;
+    transform: rotate(-30deg);
+
+    @include desktopMix {
+        top: -20%;
+        font-size: 50px;
+    }
+}
+
+.marquee-collection .marquee div {
+    animation: scrolling1 $marquee-animation-duration linear infinite;
+}
+
+.marquee-collection .marquee:nth-child(even) div {
+    animation: scrolling2 $marquee-animation-duration linear infinite;
+}
+
+.marquee-icons {
+    color: rgba(0, 0, 0, 0.5);
+    transition: 1%;
+    width: $marquee-elements-width;
+    padding: 0 5px;
+    user-select: none;
+    cursor: default;
+    padding-left: 6vw;
+}
+
+.marquee-icons:hover {
+    transition: 0%;
+    color: #0f0;
+    text-shadow: 0px 0px 10px rgb(51, 255, 51);
+}
+
+@keyframes scrolling1 {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(
+            -189vw
+        );
+
+        //calc(-1 * $marquee-elements-width * $marquee-elements)
+    }
+}
+
+@keyframes scrolling2 {
+    100% {
+        transform: translateX(0px);
+    }
+    0% {
+        transform: translateX(
+            -189vw
+        );
+
+        //calc(-1 * $marquee-elements-width * $marquee-elements)
+    }
+}
+
+@include mobile {
+    .marquee {
+        font-size: 70px !important;
+        height: 15vh !important;
+    }
+
+    .marquee-icons {
+        width: 20vw !important;
+    }
+}

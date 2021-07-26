@@ -1,0 +1,305 @@
+@import "./media";
+
+.carousel {
+    position: absolute !important;
+    margin-top: 15vh;
+    background-color: rgba(41, 41, 41, 0.4);
+    //height: 70vh;
+    height: 30rem;
+    width: 90vw;
+    margin-left: 0vw;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    left: 0vw;
+    top: 120vh;
+    z-index: 10;
+    //justify-content: center;
+
+    .arrow1 {
+        position: absolute;
+        align-items: flex-end;
+        left: 0;
+        .leftArrow {
+            font-size: 4vw;
+            color: white;
+        }
+    }
+
+    .arrow2 {
+        position: absolute;
+        align-items: flex-start;
+        right: 0;
+        .rightArrow {
+            font-size: 4vw;
+            color: white;
+        }
+    }
+
+    .arrow1,
+    .arrow2 {
+        width: 8vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 0;
+        //height: 70vh;
+        height: 30rem;
+        z-index: 1;
+    }
+
+    .crouselContent {
+        // padding: 2rem;
+        // padding-left: 10vw;
+        // padding-right: 10vw;
+        // transition: all 5s ;
+
+        .tab {
+            display: none;
+            transition: all 5s;
+        }
+
+        #activeTab {
+            display: block;
+            transition: all 5s;
+        }
+
+        .transition {
+            transition: 5s linear all;
+        }
+    }
+}
+
+.hoverTag {
+    position: absolute;
+    right: 0;
+    background: black;
+    padding: 10px;
+    padding-right: 18px;
+}
+
+:root {
+    --secondary-color: #151226;
+    --contrast-color: #0051a5;
+}
+
+.carouselContainer {
+    padding: 2rem;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    //height: 70vh;
+    height: 30rem;
+    width: 90vw;
+    justify-content: space-around;
+    align-items: center;
+    color: #fff;
+    background-color: #1512263d;
+    position: relative;
+    transition: all 0.8s ease;
+}
+
+
+.leftSwipe {
+    animation: expandLeft 1.2s ease forwards;
+}
+
+.rightSwipe {
+    animation: expandRight 1.2s ease forwards;
+}
+
+.container_content {
+    width: 50%;
+    height: 64vh;
+    align-items: center;
+    text-align: justify;
+    display: flex;
+    justify-content: center;
+}
+
+.container_outer_img {
+    margin: 4vw;
+    width: 50%;
+    overflow: hidden;
+}
+
+.container_img {
+    max-height: 60vh;
+    max-width: 100%;
+    opacity: 0.8;
+}
+
+.imgRightMove {
+    animation: slideInR 1.5s ease-in-out forwards;
+}
+
+.imgLeftMove {
+    animation: slideInL 1.5s ease-in-out forwards;
+}
+
+.par {
+    height: auto;
+    overflow: hidden;
+}
+
+.projDes {
+    line-height: 22px;
+    transform: translateY(300px);
+    animation: slideUp 0.8s ease-in-out forwards 0.8s;
+    color: #b8b8b8;
+}
+
+.btns {
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.btns_more {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--contrast-color) !important;
+    border-radius: 50px !important;
+    padding: 8px 12px !important;
+    color: #9ec4eb !important;
+    font-size: 16px !important;
+    text-transform: uppercase !important;
+    position: relative !important;
+    margin-top: 15px !important;
+    margin-right: 2vw !important;
+    outline: none;
+    transform: translateY(50px);
+    animation: slideUp 0.8s ease-in-out forwards 1s;
+}
+
+
+.gitIcon {
+    margin-right: 10px;
+    position: relative;
+    height: 1em;
+}
+
+.projTitle {
+    overflow: hidden;
+    height: auto;
+}
+
+.projHead {
+    font-size: revert;
+    color: var(--contrast-color);
+    margin-bottom: 20px;
+    transform: translateY(100px);
+    animation: slideUp 0.8s ease forwards 0.5s;
+}
+
+.languages {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    bottom: 4vh;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    font-size: 13px;
+
+    .borderC {
+        border-top: white;
+        border-top-style: inset;
+        border-top-width: 1px;
+        position: relative;
+        bottom: 0vh;
+    }
+
+    .lanCollection {
+        display: flex;
+        animation: slideDown 0.8s ease forwards 2s;
+        opacity: 0;
+
+        .lan {
+            padding: 5px;
+        }
+    }
+}
+
+@keyframes slideInR {
+    0% {
+        transform: translateX(500px) scale(0.2);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes slideInL {
+    0% {
+        transform: translateX(-500px) scale(0.2);
+    }
+    100% {
+        transform: translateX(0px) scale(1);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: translateY(320px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes expandRight {
+    0% {
+        transform: translateX(1400px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes expandLeft {
+    0% {
+        transform: translateX(-1400px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+
+@include tablet {
+    .carousel {
+        width: 100vw ;
+        left: 0;
+        margin-left: 0;
+    }
+
+    .carouselContainer{
+        width: 100vw;
+    }
+
+    .btns_more{
+        font-size: 1.5vw;
+        margin-top: 0;
+    }
+}
+
+@include mobile{
+    .carousel{
+        top: 90vh;
+    }
+}
+
