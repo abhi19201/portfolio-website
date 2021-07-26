@@ -23,7 +23,7 @@ export default function Home() {
 
                 <script
                     src='https://kit.fontawesome.com/d9c25f1394.js'
-                    crossorigin='anonymous'
+                    crossOrigin='anonymous'
                     async></script>
             </Head>
 
