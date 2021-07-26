@@ -55,10 +55,11 @@
                 height: 5rem;
             }
 
-            h3 {
+            .skillName {
                 font-size: 2rem;
                 color: #fffefe96;
                 padding: 1rem;
+                margin: 0;
             }
         }
     }
@@ -115,7 +116,7 @@
             img {
                 height: 12vw !important;
             }
-            h3 {
+            .skillName {
                 font-size: 4vw !important;
             }
         }

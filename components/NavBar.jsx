@@ -18,7 +18,6 @@ export default function Navbar() {
 
     const ResumeLink =
         "https://drive.google.com/file/d/10S1jdt3Rahcf2eke5AYiC_4cp-3mkRnx/view?usp=sharing";
-    
 
     function navButton() {
         setnavOpen(!navOpen);
@@ -49,7 +48,8 @@ export default function Navbar() {
                         onClick={() => {
                             navButton();
                         }}
-                        type='button'>
+                        type='button'
+                        aria-label='hamButton'>
                         <span className='hamburger-box'>
                             <span className='hamburger-inner'></span>
                         </span>
@@ -84,7 +84,7 @@ export default function Navbar() {
                                     className='item item1'
                                     onClick={() => {
                                         if (screenSize <= 768) navButton();
-                                        
+
                                         if (typeof document !== "undefined") {
                                             document
                                                 .getElementById("top")
@@ -99,7 +99,7 @@ export default function Navbar() {
                                     className='item item2'
                                     onClick={() => {
                                         if (screenSize <= 768) navButton();
-                                        
+
                                         if (typeof document !== "undefined") {
                                             document
                                                 .getElementById("about")
@@ -114,7 +114,7 @@ export default function Navbar() {
                                     className='item item3'
                                     onClick={() => {
                                         if (screenSize <= 768) navButton();
-                                        
+
                                         if (typeof document !== "undefined") {
                                             document
                                                 .getElementById("skills")
@@ -129,7 +129,7 @@ export default function Navbar() {
                                     className='item item3'
                                     onClick={() => {
                                         if (screenSize <= 768) navButton();
-                                        
+
                                         if (typeof document !== "undefined") {
                                             document
                                                 .getElementById("project")
@@ -144,7 +144,7 @@ export default function Navbar() {
                                     className='item item4'
                                     onClick={() => {
                                         if (screenSize <= 768) navButton();
-                                        
+
                                         if (typeof document !== "undefined") {
                                             document
                                                 .getElementById("footer")

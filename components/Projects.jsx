@@ -32,7 +32,7 @@ export default function Projects() {
                                 return (
                                     <div key={id}>
                                         {skill.icon ? skill.icon : null}
-                                        <h3>{skill.skill}</h3>
+                                        <div className="skillName">{skill.skill}</div>
                                     </div>
                                 );
                             })}
@@ -43,7 +43,7 @@ export default function Projects() {
                                 return (
                                     <div key={id}>
                                         {skill.icon ? skill.icon : null}
-                                        <h3>{skill.skill}</h3>
+                                        <div className="skillName">{skill.skill}</div>
                                     </div>
                                 );
                             })}

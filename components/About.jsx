@@ -1,5 +1,5 @@
 import React from "react";
-import aboutText from "../content/About.js";
+import aboutText,{aboutText2} from "../content/About.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function About() {
@@ -29,6 +29,7 @@ export default function About() {
                         get in touch
                     </span>{" "}
                     with me.
+                    <br />
                 </p>
             </div>
         </div>

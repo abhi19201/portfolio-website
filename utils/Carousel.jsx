@@ -113,7 +113,8 @@ export default function Carousel() {
                 className='arrow1'
                 onClick={() => {
                     prevProject();
-                }}>
+                }}
+                aria-label='leftArrow'>
                 <ArrowBackIosIcon className='leftArrow' />
             </Button>
 
@@ -152,7 +153,8 @@ export default function Carousel() {
                                                                       window.open(
                                                                           repo.homepage
                                                                       );
-                                                                  }}>
+                                                                  }}
+                                                                  aria-label='repoHome'>
                                                                   {" "}
                                                                   View Project{" "}
                                                               </Button>
@@ -163,7 +165,8 @@ export default function Carousel() {
                                                                   window.open(
                                                                       repo.html_url
                                                                   );
-                                                              }}>
+                                                              }}
+                                                              aria-label='gitButton'>
                                                               <FontAwesomeIcon
                                                                   className='fa-2x gitIcon'
                                                                   icon={[
@@ -171,7 +174,6 @@ export default function Carousel() {
                                                                       "github",
                                                                   ]}
                                                               />
-                                                              
                                                               Repo
                                                           </Button>
                                                       </div>
@@ -231,7 +233,10 @@ export default function Carousel() {
                     : null}
             </div>
 
-            <Button className='arrow2' onClick={nextProject}>
+            <Button
+                className='arrow2'
+                onClick={nextProject}
+                aria-label='rightArrow'>
                 <ArrowForwardIosIcon className='rightArrow' />
             </Button>
         </div>
