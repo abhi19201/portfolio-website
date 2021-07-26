@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Background from "../utils/iconBackground";
 import Carousel from "../utils/Carousel";
-import { skillSet1, skillSet2 } from "../Content/Skills";
+import { skillSet1, skillSet2 } from "../content/Skills";
 import Footer from "./Footer";
 
 export default function Projects() {
