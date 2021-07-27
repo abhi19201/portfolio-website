@@ -21,6 +21,11 @@ export default function Home() {
                 />
 
                 <meta
+                    name='google-site-verification'
+                    content='3KpdWZPHL2DWr9MPTKDO427c8LK4dZO0l3wnRbx_OYI'
+                />
+
+                <meta
                     name='viewport'
                     content='width=device-width, initial-scale=1'></meta>
 
