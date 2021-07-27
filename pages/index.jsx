@@ -23,6 +23,18 @@ export default function Home() {
                 <meta
                     name='viewport'
                     content='width=device-width, initial-scale=1'></meta>
+
+                <link rel='icon' type='image/png' href='/logo.svg' />
+
+                <meta
+                    httpEquiv='Content-Type'
+                    content='text/html; charset=utf-8'
+                />
+
+                <script
+                    src='https://kit.fontawesome.com/d9c25f1394.js'
+                    crossOrigin='anonymous'
+                    async></script>
             </Head>
 
             <main>
