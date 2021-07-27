@@ -44,6 +44,7 @@
         "react-router-dom": "^5.2.0",
         "react-tsparticles": "^1.28.0",
         "smooth-scrollbar": "^8.6.2",
+        "swr": "^0.5.6",
         "three": "^0.125.2",
         "tsparticles": "^1.31.1",
         "vanilla-tilt": "^1.7.0",
