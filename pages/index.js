@@ -15,11 +15,14 @@ export default function Home() {
             <Head>
                 <title>Abhijeet Wankhade</title>
 
-                
+                <meta
+                    content='Full Stack Developer and Android Developer | Pursuing CSE from IIITR | I look forward to create scalable web applications with beautiful UI. I love to explore new frameworks and technologies and work with them'
+                    name='description'
+                />
 
                 <meta
-                    name='description'
-                    content='Full Stack Developer and Android Developer | Pursuing CSE from IIITR | '
+                    content='Abhijeet Wankhade | Full Stack Developer and Android Developer | IIIT Raichur | IIT Hyderabad | Hyderabad | Yavatmal | IIITR | IITH '
+                    name='keyword'
                 />
 
                 <meta
