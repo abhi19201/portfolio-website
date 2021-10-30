@@ -108,15 +108,32 @@ export default function EmailForm() {
                 htmlMessage,
             };
 
-            axios
-                .post(
-                    "https://ab-server19.herokuapp.com/api/sendMail",
-                    emailData
-                )
+            // axios
+            //     .post(
+            //         "/api/sendMail",
+            //         emailData
+            //     )
+            //     .then(function (response) {
+            //         if (response.status === 200) {
+            //             handleOpen();
+            //             console.log("Mail SuccessFull");
+            //             setName("");
+            //             setEmail("");
+            //             setMessage("");
+            //         }
+            //     })
+            //     .catch(function (error) {
+            //         console.log(error);
+            //     });
+
+            fetch("/api/server", {
+                method: "post",
+                body: JSON.stringify(emailData),
+            })
                 .then(function (response) {
                     if (response.status === 200) {
                         handleOpen();
-                        console.log("Mail SuccessFull");
+                        console.log("Mailed SuccessFully");
                         setName("");
                         setEmail("");
                         setMessage("");
@@ -125,7 +142,6 @@ export default function EmailForm() {
                 .catch(function (error) {
                     console.log(error);
                 });
-
         }
     };
 

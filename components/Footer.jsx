@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import EmailForm from "../utils/EmailForm";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Footer(props) {
     const [screenSize, setScreenSize] = useState(
@@ -14,7 +13,12 @@ function Footer(props) {
     }
 
 
-    var Icons = ["github", "fa-gmail", "linkedin", "twitter"];
+    var Icons = {
+        github: "https://github.com/abhi19201",
+        gmail: "mailto:abhiwankhade192@gmail.com",
+        linkedin: "https://www.linkedin.com/in/abhijeetwankhade/",
+        phone: "tel: +917720998898",
+    };
 
     return (
         <div className='main'>
@@ -28,27 +32,30 @@ function Footer(props) {
                 <div className='footer'></div>
 
                 <div className='footer-bottom'>
-                    <div className='copyright ' onClick={()=>{window.open(
-                        "https://www.google.com/maps/place/20%C2%B023'24.3%22N+78%C2%B006'11.4%22E/@20.3900806,78.1009808,17z/data=!3m1!4b1!4m9!1m2!10m1!1e2!3m5!1s0x3bd3e60444333e1b:0x0!7e2!8m2!3d20.3900806!4d78.1031695",
-                        "_blank"
-                    );}} >
-                            <div className='socialIcon mapI'>
-                                <i className='mapIcon'></i>
-                            </div>
-                            <div className="location" >
-                                {" "}
-                                My Location
-                            {" "}
-                            </div>
+                    <div
+                        className='copyright '
+                        onClick={() => {
+                            window.open(
+                                "https://www.google.com/maps/place/20%C2%B023'24.3%22N+78%C2%B006'11.4%22E/@20.3900806,78.1009808,17z/data=!3m1!4b1!4m9!1m2!10m1!1e2!3m5!1s0x3bd3e60444333e1b:0x0!7e2!8m2!3d20.3900806!4d78.1031695",
+                                "_blank"
+                            );
+                        }}>
+                        <div className='socialIcon mapI'>
+                            <i className='mapIcon'></i>
+                        </div>
+                        <div className='location'> My Location </div>
                     </div>
 
                     <div className='col-md-3 footer-B'>
                         <div className='footer-socials'>
-                            {Icons.map((icon, id) => {
+                            {Object.keys(Icons).map((icon, id) => {
                                 return (
                                     <div
                                         className='socialIcon'
                                         key={id}
+                                        onClick={() => {
+                                            window.open(Icons[icon]);
+                                        }}
                                         style={{
                                             height: "3rem",
                                             width: "3rem",
@@ -63,14 +70,10 @@ function Footer(props) {
                                                 strokeWidth='2'
                                                 fill='none'></circle>
                                         </svg>
-                                        {icon != "fa-gmail" ? (
-                                            <FontAwesomeIcon
-                                                className={`iconC fa-lg ${icon}`}
-                                                icon={["fab", `${icon}`]}
-                                            />
-                                        ) : (
-                                            <i className='fab fa-lg fa-gmail facebook'></i>
-                                        )}
+                                        <img
+                                            src={`/icons/${icon}.png`}
+                                            className='iconC'
+                                        />
                                     </div>
                                 );
                             })}

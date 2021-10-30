@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 
 export default function SocialIconBar() {
     const [hideSideBar, setHideBar] = useState(" ");
@@ -30,17 +28,26 @@ export default function SocialIconBar() {
         window.addEventListener("scroll", changeBarView);
     }
 
-    var Icons = ["github", "fa-gmail", "linkedin", "twitter"];
+    var Icons = {
+        github: 'https://github.com/abhi19201',
+        gmail: 'mailto:abhiwankhade192@gmail.com',
+        linkedin: 'https://www.linkedin.com/in/abhijeetwankhade/',
+        phone: "tel: +917720998898"
+    };
 
     return (
         <div className={`socialPane ${hideSideBar}`}>
             <div className='paneBorder'>
                 <div className='socialArray'>
-                    {Icons.map((icon, id) => {
+                    {Object.keys(Icons).map((icon, id) => {
                         return (
                             <div
                                 className='socialIconC '
                                 key={id}
+                                onClick={() => {
+                                    window.open(Icons[icon]);
+                                }}
+                                
                                 style={
                                     screenSize <= 480
                                         ? {
@@ -69,14 +76,10 @@ export default function SocialIconBar() {
                                         strokeWidth='2'
                                         fill='none'></circle>
                                 </svg>
-                                {icon != "fa-gmail" ? (
-                                    <FontAwesomeIcon
-                                        className={`icons fa-lg ${icon}`}
-                                        icon={["fab", `${icon}`]}
-                                    />
-                                ) : (
-                                    <i className='fab fa-lg fa-gmail facebook'></i>
-                                )}
+                                <img
+                                    src={`/icons/${icon}.png`}
+                                    className='icons'
+                                />
                             </div>
                         );
                     })}
