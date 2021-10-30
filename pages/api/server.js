@@ -1,50 +1,38 @@
 const nodemailer = require("nodemailer");
 const dotenv = require("dotenv").config();
+const sgMail = require("@sendgrid/mail");
+
 
 export default (req, res) => {
     return new Promise((resolve, reject) => {
+        console.log(process.env.SENDGRID_API_KEY);
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
         const body = JSON.parse(req.body)
         let mailOptions = {
-            from: body.email,
+            from: "abhijeetwankhade2001@gmail.com",
             to: "abhiwankhade192@gmail.com",
             subject: "Mail from Portfolio by " + body.name,
-            //text: "hello",
-            generateTextFromHTML: true,
+            text: body.htmlMessage,
+            //generateTextFromHTML: true,
             html: body.htmlMessage,
         };
 
-        async function sendMail(mailOptions) {
-            let transporter = nodemailer.createTransport({
-                service: "gmail",
-                auth: {
-                    user: process.env.MAIL_USERNAME,
-                    pass: process.env.MAIL_PASSWORD,
-                },
-                tls: {
-                    rejectUnauthorized: false,
-                },
-            });
 
-            await transporter.sendMail(mailOptions, function (err, data) {
-                if (err) {
-                    console.log("Error " + err);
-                } else {
-                    console.log("Mail sent Successfully!");
-                    transporter.close();
-                }
-            });
-        }
-
-        sendMail(mailOptions)
-            .then(function (response) {
+        sgMail
+            .send(mailOptions)
+            .then(() => {
+                console.log("Email sent");
                 res.status(200).send("Mailed SuccessFully");
                 resolve();
             })
-            .catch(function (error) {
+            .catch((error) => {
+                console.error(error);
                 res.json(error);
                 res.status(405).end();
                 return resolve();
             });
+        
+        
     })
     
 }
